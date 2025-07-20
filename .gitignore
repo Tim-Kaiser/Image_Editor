@@ -43,5 +43,10 @@
 # build files
 build/*
 !build/.gitinclude
+
+# external libraries
+lib/*
+!lib/.gitinclude
+
 # editor files
 .idea/
