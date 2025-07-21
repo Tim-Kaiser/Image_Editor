@@ -1,6 +1,7 @@
+#include "Window.h"
 #include <optional>
 
-#include "Window.h"
+#include <gl/GL.h>
 
 Window::Window():
 window_(sf::VideoMode::getDesktopMode(), "Image Editor", sf::Style::Default, sf::State::Windowed, sf::ContextSettings(32)),
@@ -16,7 +17,9 @@ void Window::update()
 {
     while (const std::optional event = window_.pollEvent())
     {
-        if (event->is<sf::Event::Closed>())
+        if (event->is<sf::Event::Closed>() ||
+            (event->is<sf::Event::KeyPressed>() &&
+                event->getIf<sf::Event::KeyPressed>()->code == sf::Keyboard::Key::Escape))
         {
             // end the program
             isRunning_ = false;

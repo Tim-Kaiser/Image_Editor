@@ -1,7 +1,9 @@
 # pragma once
 
 #include <SFML/Window.hpp>
+#include <SFML/Window/Event.hpp>
 #include <SFML/OpenGL.hpp>
+
 
 
 class Window {

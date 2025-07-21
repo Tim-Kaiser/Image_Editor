@@ -1,4 +1,5 @@
 #include "Window.h"
+#include <gl/GL.h>
 
 int main()
 {
